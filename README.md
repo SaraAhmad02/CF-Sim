@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 39b76401371eb14e72ac30ad6086636880fa380b
 # Digital Forensics Training Simulator
 
 A web-based platform for learning digital forensics through interactive scenarios and real forensic tools.
@@ -69,3 +73,9 @@ npm run dev
 ## License
 
 MIT
+<<<<<<< HEAD
+=======
+=======
+# CF-Sim
+>>>>>>> 8eaa933f1546ddbf08e124a321304615ea918db3
+>>>>>>> 39b76401371eb14e72ac30ad6086636880fa380b
