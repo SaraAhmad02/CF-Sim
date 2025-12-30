@@ -8,10 +8,7 @@ import {
 import { useAuth } from '../context/AuthContext';
 import levelService from '../services/levelService';
 import progressService from '../services/progressService';
-<<<<<<< HEAD
 import leaderboardService from '../services/leaderboardService';
-=======
->>>>>>> 39b76401371eb14e72ac30ad6086636880fa380b
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -24,7 +21,6 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchDashboardData();
-<<<<<<< HEAD
 
     // Set up interval to refresh data periodically for real-time updates
     const refreshInterval = setInterval(() => {
@@ -32,8 +28,6 @@ const Dashboard = () => {
     }, 30000); // Refresh every 30 seconds
 
     return () => clearInterval(refreshInterval);
-=======
->>>>>>> 39b76401371eb14e72ac30ad6086636880fa380b
   }, []);
 
   const fetchDashboardData = async () => {
@@ -41,7 +35,6 @@ const Dashboard = () => {
       setLoading(true);
       setError(null);
 
-<<<<<<< HEAD
       // Fetch levels, progress, and leaderboard in parallel
       const [levelsData, progressData, leaderboardData] = await Promise.all([
         levelService.getAllLevels(),
@@ -58,16 +51,6 @@ const Dashboard = () => {
       };
 
       setStats(statsWithRank);
-=======
-      // Fetch levels and progress in parallel
-      const [levelsData, progressData] = await Promise.all([
-        levelService.getAllLevels(),
-        progressService.getUserProgress(),
-      ]);
-
-      setLevels(levelsData.levels || []);
-      setStats(progressData);
->>>>>>> 39b76401371eb14e72ac30ad6086636880fa380b
     } catch (err) {
       setError(err.message);
       console.error('Error fetching dashboard data:', err);
@@ -397,7 +380,6 @@ const Dashboard = () => {
                       <BookOpen className="w-4 h-4" />
                       {level.taskCount || 0} Tasks
                     </span>
-<<<<<<< HEAD
                   </div>
 
                   {/* Show score if user has any progress, regardless of completion */}
@@ -418,19 +400,6 @@ const Dashboard = () => {
                         }`}>
                           {score} points
                         </span>
-=======
-                    <span className="flex items-center gap-1">
-                      <Trophy className="w-4 h-4" />
-                      {level.maxScore || 0} Points
-                    </span>
-                  </div>
-
-                  {completed && score > 0 && (
-                    <div className="mb-4 p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-green-300 font-medium">Your Score:</span>
-                        <span className="text-green-400 font-bold">{score} points</span>
->>>>>>> 39b76401371eb14e72ac30ad6086636880fa380b
                       </div>
                     </div>
                   )}
