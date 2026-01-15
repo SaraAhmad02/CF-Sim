@@ -767,7 +767,7 @@ export const uploadEvidenceFile = async (req, res) => {
         storedName: file.filename,
         fileType,
         mimeType: file.mimetype,
-        fileSize: file.size,
+        fileSizeKB: Math.ceil(file.size / 1024),
         filePath: file.path,
         description: description || null,
       },

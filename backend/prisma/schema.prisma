@@ -125,7 +125,7 @@ model UploadedFile {
   storedName   String   @unique
   fileType     FileType
   mimeType     String
-  fileSize     Int
+  fileSizeKB   Int	@default(0)
   filePath     String
   uploadedAt   DateTime @default(now())
 
@@ -146,7 +146,7 @@ model EvidenceFile {
   storedName   String   @unique
   fileType     FileType
   mimeType     String
-  fileSize     Int
+  fileSizeKB   Int	@default(0)
   filePath     String
   description  String?
   uploadedAt   DateTime @default(now())

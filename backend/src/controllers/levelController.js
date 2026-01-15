@@ -143,7 +143,7 @@ export const getLevelTasks = async (req, res) => {
             id: true,
             originalName: true,
             fileType: true,
-            fileSize: true,
+            fileSizeKB: true,
             description: true,
             uploadedAt: true,
           },
